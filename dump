@@ -1,0 +1,81 @@
+-- MySQL dump 10.13  Distrib 5.1.58, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: peg
+-- ------------------------------------------------------
+-- Server version	5.1.58-1ubuntu1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `peg_user`
+--
+
+DROP TABLE IF EXISTS `peg_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `peg_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) DEFAULT NULL,
+  `password` varchar(40) DEFAULT NULL,
+  `default_corpus` varchar(4096) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `peg_user`
+--
+
+LOCK TABLES `peg_user` WRITE;
+/*!40000 ALTER TABLE `peg_user` DISABLE KEYS */;
+INSERT INTO `peg_user` VALUES (1,'beck-s','71b80410eee40c930cfec10bd4db9a77c6118b21','/home/gonzales/enron/enron_experiment/beck-s.index'),(2,'skilling-j','1b122c0737a1b46d72777e027099abf727e0873d','/home/gonzales/enron/enron_experiment/skilling-j.index');
+/*!40000 ALTER TABLE `peg_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stored_queries`
+--
+
+DROP TABLE IF EXISTS `stored_queries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stored_queries` (
+  `query_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) DEFAULT NULL,
+  `index_path` varchar(4096) DEFAULT NULL,
+  `query` varchar(1024) DEFAULT NULL,
+  `private` tinyint(1) DEFAULT NULL,
+  `shared` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`query_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stored_queries`
+--
+
+LOCK TABLES `stored_queries` WRITE;
+/*!40000 ALTER TABLE `stored_queries` DISABLE KEYS */;
+INSERT INTO `stored_queries` VALUES (4,'skilling-j','/home/gonzales/enron/queries/skilling-j/confidential.index','confidential',0,0),(2,'beck-s','/home/gonzales/enron/queries/beck-s/to_and.index','to and',0,0),(5,'skilling-j','/home/gonzales/enron/queries/skilling-j/lawyer.index','lawyer',1,0);
+/*!40000 ALTER TABLE `stored_queries` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-11-16  3:44:33
