@@ -1,0 +1,8 @@
+<parameters>
+<corpus>
+<path>/home/gonzales/enron/enron_experiment/skilling-j/3/9159.txt</path>
+<class>text</class>
+</corpus>
+<memory>1g</memory>
+<index>/home/gonzales/enron/queries/skilling-j/confidential.index</index>
+</parameters>

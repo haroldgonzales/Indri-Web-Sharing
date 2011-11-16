@@ -1,0 +1,8 @@
+<parameters>
+<corpus>
+<path>/home/gonzales/enron/enron_experiment/skilling-j/1/8627.txt</path>
+<class>text</class>
+</corpus>
+<memory>1g</memory>
+<index>/home/gonzales/enron/queries/skilling-j/privacy/lawyer.index</index>
+</parameters>
